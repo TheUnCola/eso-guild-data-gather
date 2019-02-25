@@ -1,0 +1,37 @@
+<GuiXml>
+  <Controls>
+    <TopLevelControl name="GuildPollWindow" mouseEnabled="true" movable="true" clampedToScreen="true" hidden="true">
+      <Dimensions x="350" y="600" />
+      <Anchor point="TOPLEFT" relativeTo="GuiRoot" relativePoint="TOPLEFT" />
+
+      <Controls>
+        <Backdrop name="$(parent)BG" inherits="ZO_DefaultBackdrop"/>
+        <Button name="$(parent)CloseButton" inheritAlpha="true" verticalAlignment="CENTER" horizontalAlignment="CENTER">
+          <Anchor point="CENTER" relativeTo="$(parent)" relativePoint="TOPRIGHT" offsetX="-20" offsetY="20" />
+          <Dimensions x="48" y="48" />
+          <Textures normal="/esoui/art/hud/radialicon_cancel_up.dds" mouseOver="/esoui/art/hud/radialicon_cancel_over.dds" />
+          <OnClicked>
+          GuildPollWindow:SetHidden(true)
+        </OnClicked>
+        </Button>
+        <Label name="$(parent)Title" font="ZoFontHeader3" height="25" inheritAlpha="true" color="INTERFACE_COLOR_TYPE_TEXT_COLORS:INTERFACE_TEXT_COLOR_NORMAL" verticalAlignment="TOP" horizontalAlignment="CENTER" text="Guild Poll">
+          <Anchor point="TOP" relativeTo="$(parent)" relativePoint="TOP" offsetX="-10" offsetY="5" />
+        </Label>
+        <Button name="$(parent)PollButton" inheritAlpha="true" verticalAlignment="CENTER" horizontalAlignment="CENTER">
+          <Anchor point="CENTER" relativeTo="$(parent)Title" relativePoint="TOPMIDDLE" offsetX="0" offsetY="200" />
+          <Controls>
+            <Label name="$(parent)Name" font="ZoFontGame" color="3689EF"  modifyTextType="NONE" horizontalAlignment="LEFT" verticalAlignment="CENTER" text="Polls">
+              <Anchor point="TOPLEFT" relativePoint="TOPLEFT"/>
+              <Anchor point="BOTTOMRIGHT" relativePoint="BOTTOMRIGHT"/>
+            </Label>
+          </Controls>
+          <Dimensions x="150" y="85" />
+          <OnClicked>
+          GuildPollWindow:SetHidden(true)
+        </OnClicked>
+        </Button>
+      </Controls>
+
+    </TopLevelControl>
+  </Controls>
+</GuiXml>

@@ -6,4 +6,8 @@
 ## Description: Allows Guild Leaders to Poll their Guild
 ## Author: TheUnCola
 ## Version: 0.0.1
-## APIVersion: 100024
+## APIVersion: 100026
+
+GuildPoll.xml
+Startup.lua
+Settings.lua

@@ -10,7 +10,7 @@ function GuildPoll:OnAddOnLoaded(event, addonName)
         return
     end
 
-    --ZO_CreateStringId("SI_BINDING_NAME_TOGGLE_SCOREBOARD", "Toggle Scoreboard")
+    ZO_CreateStringId("SI_BINDING_NAME_TOGGLE_WINDOW", "Toggle Window")
 
     --EVENT_MANAGER:RegisterForEvent(ADDON_NAME, EVENT_PLAYER_DEACTIVATED, OnPlayerDeactivated)
     --EVENT_MANAGER:UnregisterForEvent(ADDON_NAME, EVENT_ADD_ON_LOADED)
@@ -40,6 +40,7 @@ function GuildPoll:ConsoleCommands()
         local trimmedParam = string.gsub(param, "%s$", ""):lower()
         if(trimmedParam == "") then
             d("[Guild Poll]: Displaying Guild Poll Window")
+            GuildPollWindow:SetHidden(not GuildPollWindow:IsHidden())
         elseif (trimmedParam == 'execute') then
             d("[Guild Poll]: Running Mail Search")
         elseif (trimmedParam == 'filter') then
