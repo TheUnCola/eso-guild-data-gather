@@ -40,7 +40,7 @@ function GuildPoll:ConsoleCommands()
         local trimmedParam = string.gsub(param, "%s$", ""):lower()
         if(trimmedParam == "") then
             d("[Guild Poll]: Displaying Guild Poll Window")
-            GuildPollWindow:SetHidden(not GuildPollWindow:IsHidden())
+            GuildPollWindow:HideMainWindow()
         elseif (trimmedParam == 'execute') then
             d("[Guild Poll]: Running Mail Search")
         elseif (trimmedParam == 'filter') then
@@ -56,6 +56,14 @@ function GuildPoll:ConsoleCommands()
             SLASH_COMMANDS["/gphelp"]()
         end
     end
+end
+
+function GuildPoll:HideMainWindow()
+    GuildPollWindow:SetHidden(not GuildPollWindow:IsHidden())
+end
+
+function GuildPoll:HideMainSection()
+    GuildPollMainSection:SetHidden(not GuildPollMainSection:IsHidden())
 end
 
 -- Load the addon with this
