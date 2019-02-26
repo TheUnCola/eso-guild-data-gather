@@ -1,7 +1,7 @@
 local ADDON_NAME = "GuildPoll"
 
 GuildPoll = ZO_Object:Subclass()
-
+GuildPoll.Modules = {}
 
 
 -- EVENT_ADD_ON_LOADED
@@ -22,6 +22,7 @@ end
 function GuildPoll:Initialize()
     zo_callLater(function() d("Guild Poll Loaded") end, 2000)
 
+    self.Modules.Polls = GuildPollPolls:New()
     GuildPoll:ConsoleCommands()
 end
 
